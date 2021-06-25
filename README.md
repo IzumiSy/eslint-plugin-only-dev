@@ -1,6 +1,6 @@
 # eslint-plugin-only-dev
 
-This rule checks if the functions with the name including `__dev__` are not used in the production environment.
+This rule checks if the functions with the name including `__dev__` are not used in the production environment, only working when `NODE_ENV` is `development` or `test`.
 
 ## Usage
 ```json
@@ -43,4 +43,22 @@ $ npx eslint index.js
 ✖ 2 problems (2 errors, 0 warnings)
 ```
 
-This plugin does not do anything when `NODE_ENV` is `development` or `test`.
+Test shows more details
+
+```bash
+  only-dev
+    valid
+      ✔ function __dev__thisisvalid() {}; (38ms)
+      ✔ function __dev__thisisvalid() { __dev__thisisvalid2(); };
+      ✔ var f = { __dev__thisisvalid: function() {} };
+      ✔ var f = { __dev__thisisvalid: function() { __dev__thisisvalid2(); } };
+      ✔ var __dev__thisisinvalid = { f: __dev__thisisvalid2 };
+    invalid
+      ✔ __dev__thisisinvalid();
+      ✔ var f = { target: __dev__thisisinvalid };
+      ✔ var f = __dev__thisisinvalid;
+      ✔ function f() { __dev__thisisinvalid(); };
+      ✔ var f =  { a: function() { __dev__thisisinvalid(); } };
+      ✔ instance.__dev__thisisinvalid();
+      ✔ __dev__thisisinvalid.f();
+```
