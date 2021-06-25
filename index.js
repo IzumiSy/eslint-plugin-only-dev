@@ -14,7 +14,7 @@ const rules = {
 
       return {
         CallExpression(node) {
-          if (process.env.NODE_ENV != "development") {
+          if (!["development", "test"].includes(process.env.NODE_ENV)) {
             if (node.callee.name && node.callee.name.includes("__dev__")) {
               report(node.callee, node.callee.name)
             }
