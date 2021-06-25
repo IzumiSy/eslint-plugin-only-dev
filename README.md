@@ -1,6 +1,6 @@
 # eslint-plugin-only-dev
 
-This rule checks if the functions with the name including `__dev__` are NOT called in the production environment.
+This rule checks if the functions with the name including `__dev__` are not used in the production environment.
 
 ## Usage
 ```json
