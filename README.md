@@ -29,3 +29,5 @@ $ npx eslint index.js
 
 ✖ 2 problems (2 errors, 0 warnings)
 ```
+
+This plugin does not do anything when `NODE_ENV` is `development`.
