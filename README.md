@@ -2,6 +2,16 @@
 
 This rule checks if the functions with the name including `__dev__` are NOT called in the production environment.
 
+## Usage
+```json
+{
+  "plugins": ["only-dev"],
+  "rules": {
+    "only-dev/only-dev": "error"
+  }
+}
+```
+
 ## Example
 Giving a file like below
 
