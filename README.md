@@ -48,7 +48,7 @@ Test shows more details
 ```bash
   only-dev
     valid
-      ✔ function __dev__thisisvalid() {}; (38ms)
+      ✔ function __dev__thisisvalid() {};
       ✔ function __dev__thisisvalid() { __dev__thisisvalid2(); };
       ✔ var f = { __dev__thisisvalid: function() {} };
       ✔ var f = { __dev__thisisvalid: function() { __dev__thisisvalid2(); } };
