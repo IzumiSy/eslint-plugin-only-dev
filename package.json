@@ -1,6 +1,12 @@
 {
   "name": "eslint-plugin-only-dev",
-  "description": "n/a",
+  "scripts": {
+    "test": "mocha ./test.js"
+  },
   "version": "1.0.0",
-  "main": "index.js"
+  "main": "index.js",
+  "devDependencies": {
+    "eslint": "^7.29.0",
+    "mocha": "^9.0.1"
+  }
 }
