@@ -1,5 +1,8 @@
 # eslint-plugin-only-dev
 
+This rule checks if the functions with the name including `__dev__` are NOT called in the production environment.
+
+## Example
 Giving a file like below
 
 ```js
